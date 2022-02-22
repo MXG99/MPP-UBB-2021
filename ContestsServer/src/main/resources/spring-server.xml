@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:utl="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+<!--    <util:properties id="jdbcProps">-->
+<!--        <prop key="contests.jdbc.url">-->
+<!--            jdbc:sqlite:C:/Users/georg/OneDrive/Desktop/MP_UBB2_S2/Laboratoare/ContestsNetworking/databases/constestdb-->
+<!--        </prop>-->
+<!--    </util:properties>-->
+
+    <util:properties id="jdbcProps" location="classpath:bd.config"/>
+
+    <bean id="organizerRepo" class="contests.persistence.repository.jdbc.OrganizerRepositoryJDBC">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+    <bean id="participantRepo" class="contests.persistence.repository.jdbc.ParticipantRepositoryJDBC">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+    <bean id="activityRepo" class="contests.persistence.repository.jdbc.ActivityRepositoryJDBC">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+
+    <bean id="categoryRepo" class="contests.persistence.repository.jdbc.CategoryRepositoryJDBC">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+
+    <bean id="contestsService" class="contests.server.ContestsServices">
+        <constructor-arg ref="organizerRepo"/>
+        <constructor-arg ref="participantRepo"/>
+        <constructor-arg ref="activityRepo"/>
+        <constructor-arg ref="categoryRepo"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="serviceName" value="Contests"/>
+        <property name="service" ref="contestsService"/>
+        <property name="serviceInterface" value="contests.services.IContestsServices"/>
+        <property name="servicePort" value="1099"/>
+    </bean>
+</beans>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0"
+            prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="contests.client.gui.LoginController">
+    <center>
+        <HBox prefHeight="400.0" prefWidth="607.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="403.0"
+                      style="-fx-background-color: #3f2b63;">
+                    <children>
+                        <Label alignment="CENTER" prefHeight="514.0" prefWidth="391.0" text="Contests"
+                               textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="75.0"/>
+                            </font>
+                            <padding>
+                                <Insets top="100.0"/>
+                            </padding>
+                        </Label>
+                        <Button fx:id="btnExit" mnemonicParsing="false" onMouseClicked="#onExitClicked"
+                                prefHeight="96.0" prefWidth="422.0" stylesheets="@css/button.css" text="Exit"
+                                textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </VBox>
+                <Pane prefHeight="600.0" prefWidth="621.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="98.0" layoutY="266.0"
+                               prefHeight="30.0" prefWidth="132.0" text="EMAIL:">
+                            <font>
+                                <Font name="System Bold" size="15.0"/>
+                            </font>
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                            <padding>
+                                <Insets right="5.0"/>
+                            </padding>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="98.0" layoutY="305.0"
+                               prefHeight="30.0" prefWidth="132.0" text="PASSWORD:">
+                            <font>
+                                <Font name="System Bold" size="15.0"/>
+                            </font>
+                            <padding>
+                                <Insets right="5.0"/>
+                            </padding>
+                        </Label>
+                        <JFXButton layoutX="231.0" layoutY="345.0" onMouseClicked="#onLoginMouseClicked"
+                                   prefHeight="25.0" prefWidth="200.0" ripplerFill="#bf8eff"
+                                   style="-fx-background-color: #3f2b63;" text="LOGIN" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                        </JFXButton>
+                        <TextField fx:id="emailTextField" layoutX="231.0" layoutY="266.0" prefHeight="25.0"
+                                   prefWidth="200.0">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </TextField>
+                        <PasswordField fx:id="passwordTextField" layoutX="231.0" layoutY="305.0" prefHeight="25.0"
+                                       prefWidth="200.0">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </PasswordField>
+                    </children>
+                </Pane>
+            </children>
+        </HBox>
+    </center>
+</BorderPane>

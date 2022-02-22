@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0"
+            prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="contests.client.gui.MainController">
+    <HBox>
+        <VBox prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #3f2b63;">
+            <Pane prefHeight="181.0" prefWidth="303.0">
+                <Label layoutX="72.0" layoutY="46.0" text="Welcome" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="35.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="usernameLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="91.0" prefHeight="45.0"
+                       prefWidth="300.0" text="Username" textFill="WHITE" textOverrun="CLIP">
+                    <font>
+                        <Font name="System Bold" size="30.0"/>
+                    </font>
+                </Label>
+            </Pane>
+            <Button fx:id="btnParticipants" mnemonicParsing="false" onAction="#handleClicks" prefHeight="150.0"
+                    prefWidth="300.0" stylesheets="@css/button.css" text="Participants" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="20.0"/>
+                </font>
+            </Button>
+            <Button fx:id="btnRegistrations" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
+                    onAction="#handleClicks" prefHeight="150.0" prefWidth="303.0" stylesheets="@css/button.css"
+                    text="Registrations" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="20.0"/>
+                </font>
+            </Button>
+            <Button fx:id="btnExit" layoutX="10.0" layoutY="391.0" mnemonicParsing="false" onAction="#handleClicks"
+                    prefHeight="150.0" prefWidth="303.0" stylesheets="@css/button.css" text="Exit" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="20.0"/>
+                </font>
+            </Button>
+        </VBox>
+        <StackPane>
+            <Pane fx:id="pnParticipants" style="-fx-background-color: white;">
+                <Label layoutX="87.0" layoutY="8.0" text="Activities">
+                    <font>
+                        <Font name="System Bold" size="20.0"/>
+                    </font>
+                </Label>
+                <TableView fx:id="participantsTableView" layoutY="113.0" prefHeight="487.0" prefWidth="700.0"
+                           stylesheets="@css/button.css">
+                    <columns>
+                        <TableColumn fx:id="participantID" prefWidth="34.0" resizable="false" text="ID"/>
+                        <TableColumn fx:id="participantFN" prefWidth="120.0" resizable="false" text="First Name"/>
+                        <TableColumn fx:id="participantLN" prefWidth="120.0" resizable="false" text="Last Name"/>
+                        <TableColumn fx:id="participantFA" prefWidth="150.0" text="First activity"/>
+                        <TableColumn fx:id="participantSA" prefWidth="150.0" text="Second Activity"/>
+                        <TableColumn fx:id="participantCategory" prefWidth="125.0" text="Category"/>
+                    </columns>
+                </TableView>
+                <Label layoutX="520.0" layoutY="7.0" text="Categories">
+                    <font>
+                        <Font name="System Bold" size="20.0"/>
+                    </font>
+                </Label>
+                <ComboBox fx:id="activityCB" layoutX="14.0" layoutY="56.0" onAction="#handleSelection" prefHeight="45.0"
+                          prefWidth="233.0"/>
+                <ComboBox fx:id="categoryCB" layoutX="453.0" layoutY="56.0" onAction="#handleSelection"
+                          prefHeight="45.0" prefWidth="233.0"/>
+            </Pane>
+            <Pane fx:id="pnRegistrations" layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="700.0"
+                  style="-fx-background-color: white;">
+                <VBox layoutX="186.0" layoutY="160.0" prefHeight="280.0" prefWidth="329.0" spacing="20.0">
+                    <HBox>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="132.0"
+                               text="First Name:">
+                            <font>
+                                <Font name="System Bold" size="15.0"/>
+                            </font>
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                            <padding>
+                                <Insets right="5.0"/>
+                            </padding>
+                        </Label>
+                        <TextField fx:id="firstNameTextField" prefHeight="25.0" prefWidth="200.0">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </TextField>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="10.0">
+                        <children>
+                            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="132.0"
+                                   text="Last Name:">
+                                <font>
+                                    <Font name="System Bold" size="15.0"/>
+                                </font>
+                                <opaqueInsets>
+                                    <Insets/>
+                                </opaqueInsets>
+                                <padding>
+                                    <Insets right="5.0"/>
+                                </padding>
+                            </Label>
+                            <TextField fx:id="lastNameTextField" prefHeight="25.0" prefWidth="200.0">
+                                <font>
+                                    <Font size="15.0"/>
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="41.0">
+                        <children>
+                            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="132.0"
+                                   text="Age:">
+                                <font>
+                                    <Font name="System Bold" size="15.0"/>
+                                </font>
+                                <opaqueInsets>
+                                    <Insets/>
+                                </opaqueInsets>
+                                <padding>
+                                    <Insets right="5.0"/>
+                                </padding>
+                            </Label>
+                            <TextField fx:id="ageTextField" prefHeight="25.0" prefWidth="200.0">
+                                <font>
+                                    <Font size="15.0"/>
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="72.0">
+                        <children>
+                            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="132.0"
+                                   text="First Activity:">
+                                <font>
+                                    <Font name="System Bold" size="15.0"/>
+                                </font>
+                                <opaqueInsets>
+                                    <Insets/>
+                                </opaqueInsets>
+                                <padding>
+                                    <Insets right="5.0"/>
+                                </padding>
+                            </Label>
+                            <ComboBox fx:id="firstActivityCB" prefHeight="35.0" prefWidth="200.0" promptText="NONE"/>
+                        </children>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="103.0">
+                        <children>
+                            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="132.0"
+                                   text="Second Activity">
+                                <font>
+                                    <Font name="System Bold" size="15.0"/>
+                                </font>
+                                <opaqueInsets>
+                                    <Insets/>
+                                </opaqueInsets>
+                                <padding>
+                                    <Insets right="5.0"/>
+                                </padding>
+                            </Label>
+                            <ComboBox fx:id="secondActivityCB" prefHeight="35.0" prefWidth="200.0" promptText="NONE"/>
+                        </children>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="214.0">
+                        <children>
+                            <JFXButton fx:id="registerBtn" onMouseClicked="#onRegisterMouseClicked" prefHeight="25.0"
+                                       prefWidth="379.0" ripplerFill="#bf8eff" style="-fx-background-color: #3f2b63;"
+                                       text="REGISTER" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="12.0"/>
+                                </font>
+                            </JFXButton>
+                        </children>
+                    </HBox>
+                </VBox>
+            </Pane>
+        </StackPane>
+    </HBox>
+</AnchorPane>

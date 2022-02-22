@@ -1,0 +1,8 @@
+rootProject.name = 'ContestsNetworking'
+include 'ContestsClientFX'
+include 'ContestsModel'
+include 'ContestsServices'
+include 'ContestsServer'
+include 'ContestsPersistence'
+include 'ContestsNetworking'
+
