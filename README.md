@@ -11,7 +11,4 @@
 ## Images
 
 ![alt text](https://i.imgur.com/47IwAHg.png)
-![alt text](https://i.imgur.com/47IwAHg.png)
-![alt text](https://i.imgur.com/47IwAHg.png)
-https://ibb.co/CsTMvjp
-https://ibb.co/DGm0d4y
+![alt text](https://i.imgur.com/aBBsBcX.png)
